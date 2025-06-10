@@ -21,13 +21,19 @@ class _homeScreenState extends State<HomeScreen> {
   HomeSection _homeSection = HomeSection.movies;
   bool isPanelVisible = true;
   List<Movie> movies = [];
+  late Future<GetMovieResponse> _fetchMovies;
 
   @override
   void initState() {
     super.initState();
+    _fetchMovies = fetchMovies();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       getData();
     });
+  }
+
+  Future<GetMovieResponse> fetchMovies() async {
+    return await ServiceManager().apiTmdb.moviesApi.getMovie();
   }
 
   getData() async {
@@ -71,7 +77,7 @@ class _homeScreenState extends State<HomeScreen> {
             children: [
               HomeLeftPanel(
                 isPanelVisible: isPanelVisible,
-                movies: movies,
+                fetchMovies: _fetchMovies,
               ),
               Container(
                 color: Colors.white,

@@ -50,46 +50,53 @@ class ItemMovie extends StatelessWidget {
                   color: Colors.white.withOpacity(0.1),
                   alignment: Alignment.center,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 25,
-                        height: 25,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xffc4c4c4),
-                        ),
-                        child: const Icon(
-                          Icons.arrow_right,
-                          color: Colors.white,
-                          size: 22,
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(
                         children: [
-                          Text(
-                            movie.title!,
-                            style: const TextStyle(
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Container(
+                              width: 25,
+                              height: 25,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xffc4c4c4),
+                              ),
+                              child: const Icon(
+                                Icons.arrow_right,
                                 color: Colors.white,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w700),
+                                size: 22,
+                              ),
+                            ),
                           ),
-                          const Text(
-                            'Country: United State', // <-- No tenemos este elemento en el JSON
-                            style: TextStyle(
-                                color: Color(0xffCACACA),
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          Text(
-                            '${DateTime.now().difference(movie!.releaseDate!).inDays.toString()}d ago',
-                            style: const TextStyle(
-                                color: Color(0xffCACACA),
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                movie.title!,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              const Text(
+                                'Country: United State', // <-- No tenemos este elemento en el JSON
+                                style: TextStyle(
+                                    color: Color(0xffCACACA),
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                '${DateTime.now().difference(movie!.releaseDate!).inDays.toString()}d ago',
+                                style: const TextStyle(
+                                    color: Color(0xffCACACA),
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
                           ),
                         ],
                       ),

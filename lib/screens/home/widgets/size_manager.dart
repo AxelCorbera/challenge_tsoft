@@ -14,16 +14,16 @@ class SizeManager extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     final leftPanelWidth = isPanelVisible ? screenWidth * 0.3 : 0;
-    final iconSize = min(screenWidth * 0.03, 35.0);
+    final iconSize = min(screenWidth * 0.03, 30.0);
     return AnimatedPositioned(
-      top: screenHeight * 0.15 - 20,
-      left: leftPanelWidth + 2 - 20,
+      top: screenHeight * 0.15 - 15,
+      left: leftPanelWidth + 2 - 15,
       duration: const Duration(milliseconds: 300),
       child: GestureDetector(
         onTap: changePanelVision,
         child: Container(
-          width: 40,
-          height: 40,
+          width: 30,
+          height: 30,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Color(0xffc4c4c4),
