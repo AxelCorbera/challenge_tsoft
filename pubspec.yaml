@@ -1,0 +1,43 @@
+name: challenge_tsoft
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  storybook_flutter: ^0.14.1
+  flutter_dotenv: ^5.2.1
+  http: ^1.4.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/icons/section_btn.png
+    - assets/icons/categories_btn.png
+    - assets/icons/circle_btn.png
+    - assets/icons/search_btn.png
+    - .env
+
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/quicksand/static/Quicksand-Bold.ttf
+        - asset: assets/fonts/quicksand/static/Quicksand-Light.ttf
+        - asset: assets/fonts/quicksand/static/Quicksand-Medium.ttf
+        - asset: assets/fonts/quicksand/static/Quicksand-Regular.ttf
+        - asset: assets/fonts/quicksand/static/Quicksand-SemiBold.ttf
