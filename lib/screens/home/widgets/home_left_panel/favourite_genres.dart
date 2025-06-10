@@ -23,7 +23,7 @@ class FavouriteGenres extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.04,
-            vertical: MediaQuery.of(context).size.width * 0.01),
+            vertical: MediaQuery.of(context).size.width * 0.02),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

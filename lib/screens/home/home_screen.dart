@@ -73,18 +73,27 @@ class _homeScreenState extends State<HomeScreen> {
     return Expanded(
       child: Stack(
         children: [
-          Row(
-            children: [
-              HomeLeftPanel(
-                isPanelVisible: isPanelVisible,
-                fetchMovies: _fetchMovies,
-              ),
-              Container(
-                color: Colors.white,
-                width: 0.2,
-              ),
-              HomeRightPanel(child: Column())
-            ],
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: isPanelVisible
+                  ? MainAxisAlignment.start
+                  : MainAxisAlignment.spaceBetween,
+              children: [
+                HomeLeftPanel(
+                  isPanelVisible: isPanelVisible,
+                  fetchMovies: _fetchMovies,
+                ),
+                Container(
+                  color: Colors.white,
+                  width: 0.2,
+                ),
+                HomeRightPanel(
+                  fetchMovies: _fetchMovies,
+                  isLeftPanelVisible: isPanelVisible,
+                )
+              ],
+            ),
           ),
           SizeManager(
               changePanelVision: () {

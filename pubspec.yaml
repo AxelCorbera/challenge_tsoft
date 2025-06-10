@@ -32,6 +32,8 @@ flutter:
     - assets/icons/categories_btn.png
     - assets/icons/circle_btn.png
     - assets/icons/search_btn.png
+    - assets/icons/sort_btn.png
+    - assets/icons/eye_movie_item.png
     - .env
 
   fonts:

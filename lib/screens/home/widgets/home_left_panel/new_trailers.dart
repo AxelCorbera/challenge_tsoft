@@ -15,14 +15,14 @@ class NewTrailers extends StatelessWidget {
           vertical: MediaQuery.of(context).size.width * 0.02),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('New trailers',
+              const Text('New trailers',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
               Row(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(right: 8.0),
                     child: Text('Sort By',
                         style: TextStyle(
@@ -30,11 +30,20 @@ class NewTrailers extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             color: Color(0xff606265))),
                   ),
-                  Text('Today',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w400)),
                   InkWell(
-                    child: Icon(Icons.compare_arrows_outlined),
+                    onTap: () {},
+                    child: Row(
+                      children: [
+                        const Text('Today',
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.w400)),
+                        SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: Image.asset('assets/icons/sort_btn.png'),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               )
@@ -70,25 +79,6 @@ class NewTrailers extends StatelessWidget {
                 return const Center(
                     child: Text('No hay películas disponibles'));
               } else if (snapshot.hasData) {
-                // return Column(
-                //   children: List.generate(
-                //       2,
-                //       (index) => Padding(
-                //             padding: const EdgeInsets.only(top: 10.0),
-                //             child: Container(
-                //               decoration: BoxDecoration(
-                //                   color: Colors.grey,
-                //                   borderRadius: BorderRadius.circular(20)),
-                //               height: MediaQuery.of(context).size.height * 0.2,
-                //               child: ClipRRect(
-                //                 borderRadius: BorderRadius.circular(20),
-                //                 child: Shimmer(
-                //                   child: Container(),
-                //                 ),
-                //               ),
-                //             ),
-                //           )),
-                // );
                 return Column(
                   children: List.generate(
                       snapshot.data!.results!.length > 1 ? 2 : 1,
@@ -97,6 +87,7 @@ class NewTrailers extends StatelessWidget {
                             child: ItemMovie(
                               movie: snapshot.data!.results![index],
                               height: MediaQuery.of(context).size.height * 0.2,
+                              showPopularity: true,
                             ),
                           )),
                 );

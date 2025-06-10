@@ -8,12 +8,13 @@ class ItemMovie extends StatelessWidget {
   final Movie movie;
   final double height;
   final double? width;
-  const ItemMovie({
-    super.key,
-    required this.movie,
-    required this.height,
-    this.width,
-  });
+  final bool showPopularity;
+  const ItemMovie(
+      {super.key,
+      required this.movie,
+      required this.height,
+      this.width,
+      this.showPopularity = false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,30 @@ class ItemMovie extends StatelessWidget {
               ),
             ),
           ),
+          if (showPopularity)
+            Positioned(
+              right: 20,
+              top: 10,
+              child: Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(right: 4.0),
+                    child: SizedBox(
+                        width: 15,
+                        height: 15,
+                        child: Icon(
+                          Icons.remove_red_eye_outlined,
+                          size: 12,
+                        )),
+                  ),
+                  Text(
+                    '${movie.voteAverage! % 2 == 0 ? movie.voteAverage!.toStringAsPrecision(1) : movie.voteAverage!.toStringAsPrecision(2)} M',
+                    style: const TextStyle(
+                        fontSize: 10, fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+            ),
           Align(
             alignment: Alignment.bottomCenter,
             child: ClipRRect(
@@ -42,7 +67,7 @@ class ItemMovie extends StatelessWidget {
                 topRight: Radius.circular(10),
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
-              ), // si querés bordes redondeados
+              ),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
                 child: Container(
@@ -56,7 +81,7 @@ class ItemMovie extends StatelessWidget {
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
+                            padding: const EdgeInsets.only(right: 12.0),
                             child: Container(
                               width: 25,
                               height: 25,
@@ -111,7 +136,7 @@ class ItemMovie extends StatelessWidget {
                                   gradient: LinearGradient(
                                       colors: [
                                     Colors.white10,
-                                    Colors.white,
+                                    Colors.white60,
                                     Colors.white10
                                   ],
                                       begin: Alignment.topCenter,
@@ -129,7 +154,7 @@ class ItemMovie extends StatelessWidget {
                               padding: EdgeInsets.all(2.0),
                               child: Center(
                                 child: Text(
-                                  '1:29',
+                                  '01:29',
                                   style: TextStyle(
                                       color: Color(0xff2C383B),
                                       fontSize: 10,
