@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../../core/const/const.dart';
+import '../../../../core/const/const.dart';
+
+/// [SectionButton] muestra un botón personalizado con un título y un asset que
+/// se utiliza dentro de la clase [HomeAppBar] para mostrar las secciones de
+/// la aplicación
+///
+/// El asset se trata de un indicador que se muestra cuando el botón se
+/// encuentra activo. Es decir, cuando la aplicación muestre el contenido
+/// de la sección correspondiente al botón
 
 class SectionButton extends StatelessWidget {
   final String text;

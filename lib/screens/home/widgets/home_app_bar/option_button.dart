@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/const/const.dart';
+
+/// [OptionButton] muestra un boton personalizado con un icono, se utiliza dentro de la
+/// clase [HomeAppBar]
 
 class OptionButton extends StatelessWidget {
   final String icon;
@@ -17,7 +19,12 @@ class OptionButton extends StatelessWidget {
       padding: const EdgeInsets.only(right: 30.0),
       child: InkWell(
         onTap: onTap,
-        child: Image.asset(icon),
+        child: SizedBox(
+            height: 20,
+            child: Image.asset(
+              icon,
+              fit: BoxFit.cover,
+            )),
       ),
     );
   }

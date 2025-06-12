@@ -1,15 +1,16 @@
-// To parse this JSON data, do
-//
-//     final getMovieResponse = getMovieResponseFromJson(jsonString);
-
 import 'dart:convert';
 
+/// Decodifica un [String] en una instancia de [GetMovieResponse].
 GetMovieResponse getMovieResponseFromJson(String str) =>
     GetMovieResponse.fromJson(json.decode(str));
 
+/// Codifica una instancia de [GetMovieResponse] en un [String] JSON.
 String getMovieResponseToJson(GetMovieResponse data) =>
     json.encode(data.toJson());
 
+/// Modelo que representa la respuesta de la API `MoviesApi/getMovies` de TMDb.
+///
+/// Contiene información sobre la paginación y una lista de objetos [Movie].
 class GetMovieResponse {
   int? page;
   List<Movie>? results;
@@ -23,6 +24,7 @@ class GetMovieResponse {
     this.totalResults,
   });
 
+  /// Crea una instancia de [GetMovieResponse] a partir de un [Map] JSON.
   factory GetMovieResponse.fromJson(Map<String, dynamic> json) =>
       GetMovieResponse(
         page: json["page"],
@@ -33,6 +35,7 @@ class GetMovieResponse {
         totalResults: json["total_results"],
       );
 
+  /// Convierte la instancia actual a un [Map] JSON.
   Map<String, dynamic> toJson() => {
         "page": page,
         "results": results == null
@@ -43,6 +46,7 @@ class GetMovieResponse {
       };
 }
 
+/// Modelo que representa una película individual obtenida desde la API de TMDb.
 class Movie {
   bool? adult;
   String? backdropPath;
@@ -76,6 +80,7 @@ class Movie {
     this.voteCount,
   });
 
+  /// Crea una instancia de [Movie] a partir de un [Map] JSON.
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
@@ -97,6 +102,7 @@ class Movie {
         voteCount: json["vote_count"],
       );
 
+  /// Convierte esta instancia de [Movie] a un [Map] JSON.
   Map<String, dynamic> toJson() => {
         "adult": adult,
         "backdrop_path": backdropPath,

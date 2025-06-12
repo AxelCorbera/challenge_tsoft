@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// [GenreChip] muestra el item 'Genero' de la pelicula
+///
+/// Incluye el nombre del genero y un color de fondo
 class GenreChip extends StatelessWidget {
   final String label;
   final Color color;
@@ -17,13 +20,15 @@ class GenreChip extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
-        child: Text(
-          label,
-          style: const TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
+          child: Text(
+            label,
+            style: const TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),

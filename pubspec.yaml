@@ -1,9 +1,9 @@
 name: challenge_tsoft
-description: "A new Flutter project."
+description: "Challenge técnico"
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.1.0+1
 
 environment:
   sdk: ^3.5.3
@@ -15,6 +15,7 @@ dependencies:
   flutter_dotenv: ^5.2.1
   http: ^1.4.0
   shimmer_animation: ^2.2.2
+  provider: ^6.1.5
 
   cupertino_icons: ^1.0.8
 
@@ -34,6 +35,15 @@ flutter:
     - assets/icons/search_btn.png
     - assets/icons/sort_btn.png
     - assets/icons/eye_movie_item.png
+    - assets/icons/arrow_forward.png
+    - assets/icons/media_settings.png
+    - assets/icons/media_volume.png
+    - assets/icons/media_full_screen.png
+    - assets/icons/fire.png
+    - assets/icons/arrow_down.png
+    - assets/images/user_test0.jpg
+    - assets/images/user_test1.jpg
+    - assets/images/user_test2.jpg
     - .env
 
   fonts:

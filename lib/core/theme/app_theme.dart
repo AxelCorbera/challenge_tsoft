@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+/// [AppTheme] contiene los temas personalizados utilizados en la aplicación.
+///
+/// Actualmente incluye un único tema oscuro [`darktheme`],
+/// el cual define colores, fuentes y estilo general de la UI.
+///
+/// Se utiliza para configurar el `ThemeData` de la aplicación
+/// en el archivo principal 'main.dart'
 class AppTheme {
   static ThemeData get darktheme {
     return ThemeData(
@@ -7,19 +14,6 @@ class AppTheme {
       brightness: Brightness.dark,
       scaffoldBackgroundColor: const Color(0xff17171B),
       fontFamily: 'Quicksand',
-      // colorScheme: ColorScheme.fromSeed(
-      //   seedColor: Colors.blue,
-      //   brightness: Brightness.light,
-      // ),
-      // textTheme: const TextTheme(
-      //   headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-      //   bodyMedium: TextStyle(fontSize: 16),
-      // ),
-      // appBarTheme: const AppBarTheme(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   foregroundColor: Colors.black,
-      // ),
     );
   }
 }

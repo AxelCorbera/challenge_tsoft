@@ -7,7 +7,21 @@ import 'package:flutter/material.dart';
 /// al Widget [GenreChip]
 ///
 class Genre {
-  final String title;
-  final Color background;
-  Genre({required this.title, required this.background});
+  final int id;
+  final String name;
+  Color? background;
+  Genre(
+      {required this.id,
+      required this.name,
+      this.background = const Color(0xff262629)});
+
+  factory Genre.fromJson(Map<String, dynamic> json) => Genre(
+        id: json["id"],
+        name: json["name"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+      };
 }
