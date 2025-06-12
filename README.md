@@ -19,34 +19,37 @@ Esta aplicación web fue desarrollada en Flutter, basada en el diseño provisto 
 
 # Estructura del Proyecto
 
-- lib/
-- ├── main.dart
-- ├── app.dart                     # Configuración principal de la app
-- ├── core/                        # Constantes, helpers, y configuraciones generales
-- │   ├── theme/
-- │   ├── utils/
-- │   ├── services/
-- │   ├── const/
-- │   └── widgets/
-- ├── api/                         # Comunicación con API externa
-- │   └── api_tmdb/
-- ├── data/                        # Datos de prueba
-- ├── providers/                   # Providers
-- ├── models/                      # Modelos
-- ├── screens/                     # Pantallas principales
-- │   ├── widgets/                 # Componentes visuales reutilizables
-- │   └── storybook/               # Documentación visual de componentes
-- │
-- storybook/                       # Documentación visual de componentes
-- │   └── stories/
-- env.dart                         # Manejo seguro de la API Key
-
+```bash
+lib/
+├── main.dart
+├── app.dart                     # Configuración principal de la app
+├── core/                        # Constantes, helpers, y configuraciones generales
+│   ├── theme/
+│   ├── utils/
+│   ├── services/
+│   ├── const/
+│   └── widgets/
+├── api/                         # Comunicación con API externa
+│   └── api_tmdb/
+├── data/                        # Datos de prueba
+├── providers/                   # Providers
+├── models/                      # Modelos
+├── screens/                     # Pantallas principales
+│   ├── widgets/                 # Componentes visuales reutilizables
+│   └── storybook/               # Documentación visual de componentes
+│
+storybook/                       # Documentación visual de componentes
+│   └── stories/
+env.dart                         # Manejo seguro de la API Key
+```
 
 # Instalación
 
+```bash
 git clone https://github.com/AxelCorbera/challenge_tsoft.git
 cd challenge_tsoft
 flutter pub get
+```
 
 # Configuración de entorno
 
@@ -67,12 +70,19 @@ TMDB_API_KEY > `282bd4ee1fa7b9e2e5ec7149159d055b`
 
 # Ejecutar la Aplicación
 
-> flutter run
+
+```bash
+flutter run
+```
 
 # Ejecutar Storybook
 
-> flutter run -t lib/storybook.dart
+```bash
+flutter run -t lib/storybook.dart
+```
 
 - Para correr directamente en chrome
 
-> flutter run -d chrome -t lib/storybook.dart
+```bash
+flutter run -d chrome -t lib/storybook.dart
+```
