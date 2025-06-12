@@ -19,7 +19,27 @@ Esta aplicación web fue desarrollada en Flutter, basada en el diseño provisto 
 
 # Estructura del Proyecto
 
-<pre lang="text"><code>```text lib/ ├── main.dart ├── app.dart # Configuración principal de la app ├── core/ # Constantes, helpers, y configuraciones generales │ ├── theme/ │ ├── utils/ │ ├── services/ │ ├── const/ │ └── widgets/ ├── api/ # Comunicación con API externa │ └── api_tmdb/ ├── data/ # Datos de prueba ├── providers/ # Providers ├── models/ # Modelos ├── screens/ # Pantallas principales │ ├── widgets/ # Componentes visuales reutilizables │ └── storybook/ # Documentación visual de componentes │ storybook/ # Documentación visual de componentes │ └── stories/ env.dart # Manejo seguro de la API Key ```</code></pre>
+- lib/
+- ├── main.dart
+- ├── app.dart                     # Configuración principal de la app
+- ├── core/                        # Constantes, helpers, y configuraciones generales
+- │   ├── theme/
+- │   ├── utils/
+- │   ├── services/
+- │   ├── const/
+- │   └── widgets/
+- ├── api/                         # Comunicación con API externa
+- │   └── api_tmdb/
+- ├── data/                        # Datos de prueba
+- ├── providers/                   # Providers
+- ├── models/                      # Modelos
+- ├── screens/                     # Pantallas principales
+- │   ├── widgets/                 # Componentes visuales reutilizables
+- │   └── storybook/               # Documentación visual de componentes
+- │
+- storybook/                       # Documentación visual de componentes
+- │   └── stories/
+- env.dart                         # Manejo seguro de la API Key
 
 
 # Instalación
@@ -47,12 +67,12 @@ TMDB_API_KEY > `282bd4ee1fa7b9e2e5ec7149159d055b`
 
 # Ejecutar la Aplicación
 
-flutter run
+> flutter run
 
 # Ejecutar Storybook
 
-flutter run -t lib/storybook.dart
+> flutter run -t lib/storybook.dart
 
 - Para correr directamente en chrome
 
-flutter run -d chrome -t lib/storybook.dart
+> flutter run -d chrome -t lib/storybook.dart
