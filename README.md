@@ -78,11 +78,11 @@ flutter run
 # Ejecutar Storybook
 
 ```bash
-flutter run -t lib/storybook.dart
+flutter run -t storybook/main.dart
 ```
 
 - Para correr directamente en chrome
 
 ```bash
-flutter run -d chrome -t lib/storybook.dart
+flutter run -d chrome -t storybook/main.dart 
 ```
